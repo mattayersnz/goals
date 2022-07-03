@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
 body {
-  background-color: #ffffff;
+  background-color: #282c34;
   font-family: 'Inter', 'sans serif';
   font-weight: 200;
 }
@@ -23,19 +23,15 @@ button {
   margin-top: 7px;
 }
 
-.GoalsApp {
-  background-color: #282c34;
-  height: 98vh;
+.AppContainer {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
-  font-size: calc(10px + 2vmin);
   color: white;
 }
 
-.title {
-  padding-top: 14px;
+.Title {
   font-weight: 800;
 }
 
