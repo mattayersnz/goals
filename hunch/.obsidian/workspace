@@ -1,0 +1,88 @@
+{
+  "main": {
+    "id": "a2ce6872a6b8de07",
+    "type": "split",
+    "children": [
+      {
+        "id": "20a3eca979dc65e6",
+        "type": "leaf",
+        "active": true,
+        "state": {
+          "type": "markdown",
+          "state": {
+            "file": "Hunch 1.0.md",
+            "mode": "source"
+          }
+        }
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "45cb321d9b89a60b",
+    "type": "split",
+    "children": [
+      {
+        "id": "a61db9d2afb374b9",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "0b18994fe41112da",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {}
+            }
+          },
+          {
+            "id": "6bce626e360c523c",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": ""
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "right": {
+    "id": "38e0e7a5f301ec24",
+    "type": "split",
+    "children": [
+      {
+        "id": "ffff7f0444e56ae5",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "2e1870af09d41408",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "Hunch 1.0.md"
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "lastOpenFiles": [
+    "Hunch 1.0.md",
+    "Key Features.md",
+    "Hunch Strategy.md",
+    "Hunch Question.md",
+    "New Note.md",
+    "Creating order in disorder.md",
+    "Roam Research.md"
+  ]
+}

@@ -1,0 +1,3 @@
+Database Name: Local Database
+User Name: guest
+Project Name: Gian's 4th Birthday

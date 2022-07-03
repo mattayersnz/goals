@@ -1,0 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@700&display=swap');
+
+@font-face {
+  font-family: 'Rubik', sans-serif;
+  font-weight: 700;
+}
+
+body                {background-color: white;}  
+h1                  {color: red; color:rgba(196, 196, 196, 1); font-family: 'Rubik'; font-size:200%; width: 100%; margin: 5%; margin-bottom: 2%;}
+p                   {color: red; color:rgba(196, 196, 196, 1); font-family: 'Rubik'; font-size:100%; width: 100%; margin: 5%; margin-top: 0%;}
+form                {color: red; color:rgba(255, 111, 111, 1); font-family: 'Rubik'; font-size:100%; width: 100%; margin: 5%; margin-top: 0%;}
+input               {border:none; font-size:100%; font-family: 'Rubik'; color: red; color:rgba(255, 111, 111, 0.5); width: 100%; margin-top: 0%; margin-bottom: 2%; outline: none}
+::placeholder       {color: red; color:rgba(255, 111, 111, 0.5); font-family: 'Rubik';}
+input[type=submit]  {background-color: white; background-color:rgba(196, 196, 196, .2); border-radius: 5px; width: auto; color:rgba(255, 111, 111, 1); margin-top: 0%;}  

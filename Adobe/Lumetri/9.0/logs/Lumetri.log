@@ -1,0 +1,18 @@
+Machine:   Matts-MacBook-Pro.local in domain 
+User:      matt.ayers
+Mode:      64-Bit
+Display:   Display not detectable
+Driver:    Driver not detectable
+CPU:       Name: Intel(R) Core(TM) i7-4750HQ CPU @ 2.00GHz
+           Model: 70, Family: 6, Stepping: 1 
+           Total Threads: 8
+           Features: MMX SSE SSE2 SSE3 SSSE3 SSE4.1 SSE4.2 AES AVX AVX2 FMA F16C POPCNT RDTSCP RDRAND
+Base path: /Applications/Adobe Premiere Pro CC 2015/Adobe Premiere Pro CC 2015.app/Contents/MacOS/
+Arguments: 
+
+14:35:41 [IrLog]           LogFile initialized
+14:35:41 [GlobalSettings]  Loading user settings from /Users/matt.ayers/Documents/Adobe/Lumetri/9.0/settings/User_Settings.xml
+14:52:53 [GlobalSettings]  Last object UID: 0x00000001
+14:52:53 [IrLog]           Closing log file
+
+11/30/17

@@ -1,0 +1,82 @@
+<?xml version='1.0'?>
+<prop.map version='4'>
+<prop.list>
+<prop.pair>
+<key>BuiltInKeys</key>
+<array>
+<array.type><string/></array.type>
+<string>$$$/Premiere/FrontEnd/AllPanels=All Panels</string>
+<string>$$$/Premiere/FrontEnd/Assembly=Assembly</string>
+<string>$$$/Premiere/FrontEnd/Editing=Editing</string>
+<string>$$$/Premiere/FrontEnd/Color=Color</string>
+<string>$$$/Premiere/FrontEnd/Effects=Effects</string>
+<string>$$$/Premiere/FrontEnd/Audio=Audio</string>
+<string>$$$/Premiere/FrontEnd/Metalogging=Metalogging</string>
+<string>$$$/Premiere/FrontEnd/Titles=Titles</string>
+</array>
+</prop.pair>
+<prop.pair>
+<key>BuiltIns</key>
+<array>
+<array.type><ustring/></array.type>
+</array>
+</prop.pair>
+<prop.pair>
+<key>FilePaths</key>
+<array>
+<array.type><ustring/></array.type>
+<ustring>/Users/matt.ayers/Documents/Adobe/Premiere Pro/9.0/Profile-matt.ayers/Layouts/UserWorkspace1.xml</ustring>
+</array>
+</prop.pair>
+<prop.pair>
+<key>MainWndPos</key>
+<prop.list>
+<prop.pair>
+<key>CurrState</key>
+<array>
+<array.type><int type='signed' size='32'/></array.type>
+<int type='signed' size='32'>27</int>
+<int type='signed' size='32'>22</int>
+<int type='signed' size='32'>1920</int>
+<int type='signed' size='32'>1174</int>
+</array>
+</prop.pair>
+<prop.pair>
+<key>IdealState</key>
+<array>
+<array.type><int type='signed' size='32'/></array.type>
+<int type='signed' size='32'>22</int>
+<int type='signed' size='32'>0</int>
+<int type='signed' size='32'>1196</int>
+<int type='signed' size='32'>1920</int>
+</array>
+</prop.pair>
+</prop.list>
+</prop.pair>
+<prop.pair>
+<key>ModifiedTimes</key>
+<array>
+<array.type><string/></array.type>
+<string>20171130T013718</string>
+</array>
+</prop.pair>
+<prop.pair>
+<key>UserNames</key>
+<array>
+<array.type><ustring/></array.type>
+<ustring>Editing</ustring>
+</array>
+</prop.pair>
+<prop.pair>
+<key>WorkspaceConfigVersion</key>
+<string>1.1</string>
+</prop.pair>
+<prop.pair>
+<key>WorkspaceTypes</key>
+<array>
+<array.type><int type='signed' size='32'/></array.type>
+<int type='signed' size='32'>1</int>
+</array>
+</prop.pair>
+</prop.list>
+</prop.map>
