@@ -1,9 +1,6 @@
 import React, { useState } from 'react';
 import { initializeApp } from "firebase/app";
-import {
-  getAuth,
-  onAuthStateChanged
-} from "firebase/auth";
+import { getAuth, onAuthStateChanged } from "firebase/auth";
 import Login from './components/Login';
 import App from './App';
 
@@ -29,23 +26,24 @@ function Auth() {
 
   const [loggedIn, setLoggedIn] = useState(false)
   const [status, setStatus] = useState('')
+  const [userId, setUserId] = useState('')
 
-  const monitorAuthState = async () => {
-    onAuthStateChanged(auth, user => {
+  const monitorAuthState = async (setLoginStatus, setUserId) => {
+    onAuthStateChanged && onAuthStateChanged(auth, user => {
       if (user) {
-        setLoggedIn(true)
-        setStatus('');
-      }
+        setUserId(user.uid)
+        setLoggedIn(true);
+      } else setLoggedIn(false);
     })
   }
-
-  monitorAuthState();
+  monitorAuthState(setLoggedIn, setUserId);
 
   // If Authenticated
   if (loggedIn) {
     return <App
             auth={auth}
             setLoggedIn={setLoggedIn}
+            userId={userId}
             />
   }
 
