@@ -132,10 +132,12 @@ const GoalHeader = styled.div`
   align-items: center;
   justify-content: center;
   font-weight: 800;
+  width: 15%;
 `
 
 const GoalName = styled.div`
   margin-top: 12px;
+  text-align: center;
 `
 
 const GoalImage = styled.img`
