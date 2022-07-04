@@ -56,16 +56,20 @@ function Goals({ auth, userId }) {
     const firestore = getFirestore();
     const goalRef = doc(firestore, 'goals', myGoals[i].id);
     let currentAmount = myGoals[i].saved
-    currentAmount ++
-    setDoc(goalRef, { saved: currentAmount }, { merge: true });
+    if (parseInt(currentAmount) < parseInt(myGoals[i].amount)) {
+      currentAmount++
+      setDoc(goalRef, { saved: currentAmount }, { merge: true });
+    }
   }
 
   const reduceAmount = (i) => {
     const firestore = getFirestore();
     const goalRef = doc(firestore, 'goals', myGoals[i].id);
     let currentAmount = myGoals[i].saved
-    currentAmount --
-    setDoc(goalRef, { saved: currentAmount }, { merge: true });
+    if (parseInt(currentAmount) > 0) {
+      currentAmount--
+      setDoc(goalRef, { saved: currentAmount }, { merge: true });
+    }
   }
 
   // Progress Bar attributes
@@ -87,14 +91,15 @@ function Goals({ auth, userId }) {
        ))}
        <AddGoalContainer>
        <div className="inputs">
-         <AddGoalTitle>Goal Name</AddGoalTitle>
-         <input type="url" autoComplete="off" value={goalName} onChange={(event) => { setGoalName(event.target.value) }} />
-         <AddGoalTitle>Goal Amount</AddGoalTitle>
-         <input type="number" autoComplete="off" value={goalAmount} onChange={(event) => { setGoalAmount(event.target.value) }} />
-         <AddGoalTitle>Goal Image</AddGoalTitle>
-         <input type="url" autoComplete="off" value={goalImage} onChange={(event) => { setGoalImage(event.target.value) }} />
-         <AddGoalTitle>Goal Saved</AddGoalTitle>
-         <input type="number" autoComplete="off" value={goalSaved} onChange={(event) => { setGoalSaved(event.target.value) }} />
+          <h2>Add Goal</h2>
+          <AddGoalTitle>Goal Name</AddGoalTitle>
+          <input type="url" autoComplete="off" value={goalName} onChange={(event) => { setGoalName(event.target.value) }} />
+          <AddGoalTitle>Goal Amount</AddGoalTitle>
+          <input type="number" autoComplete="off" value={goalAmount} onChange={(event) => { setGoalAmount(event.target.value) }} />
+          <AddGoalTitle>Goal Image</AddGoalTitle>
+          <input type="url" autoComplete="off" value={goalImage} onChange={(event) => { setGoalImage(event.target.value) }} />
+          <AddGoalTitle>Goal Saved</AddGoalTitle>
+          <input type="number" autoComplete="off" value={goalSaved} onChange={(event) => { setGoalSaved(event.target.value) }} />
        </div>
        <div className="buttons">
          <button onClick={addGoal}>Add Goal</button>
@@ -141,7 +146,9 @@ const AddGoalContainer = styled.div`
   display: flex;
   flex-direction: column;
   padding: 12px;
+  padding-top: 0px;
   margin-top: 42px;
+  margin-bottom: 42px;
   background-color: #212224;
   border-radius: 5px;
 `
