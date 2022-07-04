@@ -79,13 +79,19 @@ function Goals({ auth, userId }) {
     <>
       {myGoals.map((goal, i) => (
         <GoalContainer key={i+goal.name}>
-          <GoalImage className="goalItem" src={goal.image} />
-          <GoalItem>{goal.name}</GoalItem>
-          <GoalItem>${goal.amount}</GoalItem>
-          <ProgressBar completed={goal.saved/goal.amount * 100} width={'100%'} className="progressBar" dir={'rtl'} baseBgColor={'#212224'} customLabel={' $' + goal.saved} />
-          <SavedUpdate onClick={() => addAmount(i)}>Add</SavedUpdate>
-          <SavedUpdate onClick={() => reduceAmount(i)}>Reduce</SavedUpdate>
-          <Close src={close} onClick={() => deleteGoal(i)}/>
+          <GoalHeader>
+            <GoalImage className="goalItem" src={goal.image} />
+            <GoalName>{goal.name}</GoalName>
+          </GoalHeader>
+          <GoalMoney>
+            <GoalAmount>${goal.amount}</GoalAmount>
+            <ProgressBar completed={goal.saved/goal.amount * 100} width={'100%'} className="progressBar" dir={'rtl'} baseBgColor={'#212224'} customLabel={' $' + goal.saved} />
+          </GoalMoney>
+          <GoalSettings>
+            <SavedUpdate onClick={() => addAmount(i)}>Add</SavedUpdate>
+            <SavedUpdate onClick={() => reduceAmount(i)}>Reduce</SavedUpdate>
+            <Close src={close} onClick={() => deleteGoal(i)}/>
+          </GoalSettings>
         </GoalContainer>
 
        ))}
@@ -114,25 +120,61 @@ const GoalContainer = styled.div`
   align-items: center;
   justify-content: center;
   width: 80%;
+  @media only screen and (max-width: 920px) {
+    flex-direction: column;
+    margin-top: 24px;
+  }
+`
+
+const GoalHeader = styled.div`
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  font-weight: 800;
+`
+
+const GoalName = styled.div`
+  margin-top: 12px;
+  margin-left: 12px;
+  margin-right: 12px;
+  text-align: center;
 `
 
 const GoalImage = styled.img`
   height: 100px;
   width: 100px;
   border-radius: 5px;
+  margin-right: 12px;
 `
 
-const GoalItem = styled.h3`
+const GoalAmount = styled.div`
   margin-left: 12px;
-  margin-right: 12px;
-  padding-left: 12px;
+  margin-right: 7px;
+  font-weight: 800;
 `
 
-const SavedUpdate = styled.h3`
-  margin-left: 12px;
-  margin-right: 12px;
+const GoalMoney = styled.div`
+  display: flex;
+  align-items: center;
+  @media only screen and (max-width: 920px) {
+    margin-top: 10px;
+  }
+`
+
+const GoalSettings = styled.div`
+  display: flex;
+  align-items: center;
+`
+
+const SavedUpdate = styled.div`
+  margin-left: 7px;
+  margin-right: 7px;
   padding-left: 12px;
   cursor: pointer;
+  font-weight: 800;
+  @media only screen and (max-width: 920px) {
+    margin-top: 10px;
+  }
 `
 
 const Close = styled.img`
@@ -140,6 +182,9 @@ const Close = styled.img`
   border: none;
   cursor: pointer;
   padding-left: 12px;
+  @media only screen and (max-width: 920px) {
+    margin-top: 10px;
+  }
 `
 
 const AddGoalContainer = styled.div`
