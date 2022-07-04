@@ -12,7 +12,7 @@ import {
 import { uid } from 'uid';
 import close from '../images/close.svg';
 import styled from 'styled-components';
-
+import ProgressBar from "@ramonak/react-progress-bar";
 
 function Goals({ auth, userId }) {
 
@@ -20,6 +20,7 @@ function Goals({ auth, userId }) {
   const [goalName, setGoalName] = useState('')
   const [goalAmount, setGoalAmount] = useState('')
   const [goalImage, setGoalImage] = useState('')
+  const [goalSaved, setGoalSaved] = useState('')
 
   // Goal Listener
   useEffect(() => {
@@ -39,10 +40,11 @@ function Goals({ auth, userId }) {
     const firestore = getFirestore();
     const newId = uid();
     const goalRef = doc(firestore, 'goals', newId);
-    setDoc(goalRef, { id: newId, owner: userId, name: goalName, amount: goalAmount, image: goalImage });
+    setDoc(goalRef, { id: newId, owner: userId, name: goalName, amount: goalAmount, image: goalImage, saved: goalSaved });
     setGoalName('');
     setGoalAmount('');
     setGoalImage('');
+    setGoalSaved('');
   }
 
   const deleteGoal = (i) => {
@@ -50,13 +52,35 @@ function Goals({ auth, userId }) {
     deleteDoc(doc(firestore, 'goals', myGoals[i].id));
   }
 
+  const addAmount = (i) => {
+    const firestore = getFirestore();
+    const goalRef = doc(firestore, 'goals', myGoals[i].id);
+    let currentAmount = myGoals[i].saved
+    currentAmount ++
+    setDoc(goalRef, { saved: currentAmount }, { merge: true });
+  }
+
+  const reduceAmount = (i) => {
+    const firestore = getFirestore();
+    const goalRef = doc(firestore, 'goals', myGoals[i].id);
+    let currentAmount = myGoals[i].saved
+    currentAmount --
+    setDoc(goalRef, { saved: currentAmount }, { merge: true });
+  }
+
+  // Progress Bar attributes
+  // https://github.com/KaterinaLupacheva/react-progress-bar
+
   return (
     <>
       {myGoals.map((goal, i) => (
-        <GoalContainer>
-          <GoalImage key={i+goal.name} className="goalItem" src={goal.image} />
-          <h3 key={i+goal.name} className="goalItem">{goal.name}</h3>
-          <h3 key={i+goal.name} className="goalItem">${goal.amount}</h3>
+        <GoalContainer key={i+goal.name}>
+          <GoalImage className="goalItem" src={goal.image} />
+          <GoalItem>{goal.name}</GoalItem>
+          <GoalItem>${goal.amount}</GoalItem>
+          <ProgressBar completed={goal.saved/goal.amount * 100} width={'100%'} className="progressBar" dir={'rtl'} baseBgColor={'#212224'} customLabel={' $' + goal.saved} />
+          <SavedUpdate onClick={() => addAmount(i)}>Add</SavedUpdate>
+          <SavedUpdate onClick={() => reduceAmount(i)}>Reduce</SavedUpdate>
           <Close src={close} onClick={() => deleteGoal(i)}/>
         </GoalContainer>
 
@@ -66,9 +90,11 @@ function Goals({ auth, userId }) {
          <AddGoalTitle>Goal Name</AddGoalTitle>
          <input type="url" autoComplete="off" value={goalName} onChange={(event) => { setGoalName(event.target.value) }} />
          <AddGoalTitle>Goal Amount</AddGoalTitle>
-         <input type="url" autoComplete="off" value={goalAmount} onChange={(event) => { setGoalAmount(event.target.value) }} />
+         <input type="number" autoComplete="off" value={goalAmount} onChange={(event) => { setGoalAmount(event.target.value) }} />
          <AddGoalTitle>Goal Image</AddGoalTitle>
          <input type="url" autoComplete="off" value={goalImage} onChange={(event) => { setGoalImage(event.target.value) }} />
+         <AddGoalTitle>Goal Saved</AddGoalTitle>
+         <input type="number" autoComplete="off" value={goalSaved} onChange={(event) => { setGoalSaved(event.target.value) }} />
        </div>
        <div className="buttons">
          <button onClick={addGoal}>Add Goal</button>
@@ -81,11 +107,27 @@ function Goals({ auth, userId }) {
 const GoalContainer = styled.div`
   display: flex;
   align-items: center;
+  justify-content: center;
+  width: 80%;
 `
 
 const GoalImage = styled.img`
-  height: 40px;
-  width: 40px;
+  height: 100px;
+  width: 100px;
+  border-radius: 5px;
+`
+
+const GoalItem = styled.h3`
+  margin-left: 12px;
+  margin-right: 12px;
+  padding-left: 12px;
+`
+
+const SavedUpdate = styled.h3`
+  margin-left: 12px;
+  margin-right: 12px;
+  padding-left: 12px;
+  cursor: pointer;
 `
 
 const Close = styled.img`
@@ -99,6 +141,7 @@ const AddGoalContainer = styled.div`
   display: flex;
   flex-direction: column;
   padding: 12px;
+  margin-top: 42px;
   background-color: #212224;
   border-radius: 5px;
 `

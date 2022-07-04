@@ -31,9 +31,8 @@ button {
   color: white;
 }
 
-.goalItem {
-  cursor: pointer;
-  padding-left: 12px;
+.progressBar {
+  width: 60%;
 }
 
 .Title {
