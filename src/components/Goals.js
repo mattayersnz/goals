@@ -119,7 +119,7 @@ const GoalContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-top: 42px;
+  margin-top: 24px;
   width: 80%;
   @media only screen and (max-width: 600px) {
     flex-direction: column;
