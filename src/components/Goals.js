@@ -128,23 +128,20 @@ const GoalContainer = styled.div`
 
 const GoalHeader = styled.div`
   display: flex;
-  align-items: center;
   flex-direction: column;
+  align-items: center;
+  justify-content: center;
   font-weight: 800;
 `
 
 const GoalName = styled.div`
   margin-top: 12px;
-  margin-left: 12px;
-  margin-right: 12px;
-  text-align: center;
 `
 
 const GoalImage = styled.img`
   height: 100px;
   width: 100px;
-  border-radius: 5px;
-  margin-right: 12px;
+  border-radius: 10px;
 `
 
 const GoalAmount = styled.div`
@@ -156,6 +153,7 @@ const GoalAmount = styled.div`
 const GoalMoney = styled.div`
   display: flex;
   align-items: center;
+  margin-left: 12px;
   @media only screen and (max-width: 920px) {
     margin-top: 10px;
   }
