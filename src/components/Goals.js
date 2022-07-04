@@ -119,10 +119,10 @@ const GoalContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+  margin-top: 42px;
   width: 80%;
-  @media only screen and (max-width: 920px) {
+  @media only screen and (max-width: 600px) {
     flex-direction: column;
-    margin-top: 24px;
   }
 `
 
@@ -154,14 +154,13 @@ const GoalMoney = styled.div`
   display: flex;
   align-items: center;
   margin-left: 12px;
-  @media only screen and (max-width: 920px) {
-    margin-top: 10px;
-  }
+  margin-top: 10px;
 `
 
 const GoalSettings = styled.div`
   display: flex;
   align-items: center;
+  color: #909090;
 `
 
 const SavedUpdate = styled.div`
@@ -170,9 +169,7 @@ const SavedUpdate = styled.div`
   padding-left: 12px;
   cursor: pointer;
   font-weight: 800;
-  @media only screen and (max-width: 920px) {
-    margin-top: 10px;
-  }
+  margin-top: 10px;
 `
 
 const Close = styled.img`
@@ -180,9 +177,7 @@ const Close = styled.img`
   border: none;
   cursor: pointer;
   padding-left: 12px;
-  @media only screen and (max-width: 920px) {
-    margin-top: 10px;
-  }
+  margin-top: 10px;
 `
 
 const AddGoalContainer = styled.div`
@@ -190,7 +185,7 @@ const AddGoalContainer = styled.div`
   flex-direction: column;
   padding: 12px;
   padding-top: 0px;
-  margin-top: 42px;
+  margin-top: 64px;
   margin-bottom: 42px;
   background-color: #212224;
   border-radius: 5px;
